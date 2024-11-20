@@ -80,4 +80,6 @@ void AverageColorWorkerSVersion::run()
             }
         }
     }
+
+    emit workFinished();
 }

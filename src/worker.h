@@ -42,6 +42,9 @@ signals:
     // Signal type function that emits
     void averageColorComputed(int xStart, int yStart, QColor avgColor);
 
+    // Signal type function
+    void workFinished();
+
 private:
     QPixmap m_pixmap;
     int m_xStart, m_yStart, m_blockSize;

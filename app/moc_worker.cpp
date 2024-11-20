@@ -157,6 +157,7 @@ constexpr auto qt_meta_stringdata_CLASSAverageColorWorkerSVersionENDCLASS = QtMo
     "xStart",
     "yStart",
     "avgColor",
+    "workFinished",
     "run"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
@@ -170,21 +171,23 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSAverageColorWorkerSVersionENDCLA
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    3,   26,    2, 0x06,    1 /* Public */,
+       1,    3,   32,    2, 0x06,    1 /* Public */,
+       6,    0,   39,    2, 0x06,    5 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       6,    0,   33,    2, 0x0a,    5 /* Public */,
+       7,    0,   40,    2, 0x0a,    6 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::QColor,    3,    4,    5,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
@@ -206,6 +209,8 @@ Q_CONSTINIT const QMetaObject AverageColorWorkerSVersion::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         QtPrivate::TypeAndForceComplete<QColor, std::false_type>,
+        // method 'workFinished'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'run'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -219,7 +224,8 @@ void AverageColorWorkerSVersion::qt_static_metacall(QObject *_o, QMetaObject::Ca
         (void)_t;
         switch (_id) {
         case 0: _t->averageColorComputed((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QColor>>(_a[3]))); break;
-        case 1: _t->run(); break;
+        case 1: _t->workFinished(); break;
+        case 2: _t->run(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -228,6 +234,13 @@ void AverageColorWorkerSVersion::qt_static_metacall(QObject *_o, QMetaObject::Ca
             using _t = void (AverageColorWorkerSVersion::*)(int , int , QColor );
             if (_t _q_method = &AverageColorWorkerSVersion::averageColorComputed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (AverageColorWorkerSVersion::*)();
+            if (_t _q_method = &AverageColorWorkerSVersion::workFinished; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 1;
                 return;
             }
         }
@@ -253,13 +266,13 @@ int AverageColorWorkerSVersion::qt_metacall(QMetaObject::Call _c, int _id, void 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }
@@ -269,5 +282,11 @@ void AverageColorWorkerSVersion::averageColorComputed(int _t1, int _t2, QColor _
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void AverageColorWorkerSVersion::workFinished()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

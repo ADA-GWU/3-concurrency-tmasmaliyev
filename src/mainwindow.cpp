@@ -80,6 +80,16 @@ void MainWindow::singleThreadedProcess() {
     QObject::connect(thread, &QThread::started, worker, &AverageColorWorkerSVersion::run);
     QObject::connect(worker, &AverageColorWorkerSVersion::averageColorComputed, this, &MainWindow::onAverageColorComputed);
 
+    QObject::connect(worker, &AverageColorWorkerSVersion::workFinished, this, [&]() {
+
+        QPixmap retrievedPixmap = imageLabel->pixmap();
+        QString currentDir = QDir::currentPath();
+        std::cout << "Current Directory: " << currentDir.toStdString() << std::endl;
+
+        QString fullPath = currentDir + "/" + "result.jpg";
+        retrievedPixmap.save(fullPath);
+    });
+
     // Start the thread
     thread->start();
 }
