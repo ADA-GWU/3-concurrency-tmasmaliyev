@@ -12,7 +12,7 @@ In this directory, there is `app` and `src` folders. In order to see codes and h
 Every single `cpp`, `.h` and `.ui` files are there. 
 
 It can be built onto `executable` format, but for building, you should have `qmake`. You can download here if you want to build.
-![Link](https://www.qt.io/offline-installers)
+[Link](https://www.qt.io/offline-installers)
 
 There will be app called `Qt Creator` after installation. In `src` section, you need to open `.pro` file. After changing build location file, everything will be bundled into `executable` format.
 
