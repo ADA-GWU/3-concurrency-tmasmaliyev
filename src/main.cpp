@@ -44,6 +44,7 @@ int main(int argc, char **argv)
 
     // Process parameters
     w.processParameters(fileName, blockSize, type);
+    w.saveImage();
 
     // Stay until the termination of app
     return a.exec();

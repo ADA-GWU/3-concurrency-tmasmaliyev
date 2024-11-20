@@ -19,16 +19,28 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    // Accepting input parameters for UI as three arguments
     void processParameters(const QString &imagePath, int blockSize, char type);
+
+    // Single Threaded Process
     void singleThreadedProcess();
+
+    // Multi Threaded Process
     void multiThreadedProcess();
 
+    // Save image
+    void saveImage();
+
+    // ImageLabel
+    QLabel *imageLabel;
+
 public slots:
+    // Slot for `thread` connection
     void onAverageColorComputed(int xStart, int yStart, QColor avgColor);
 
 private:
+    // Additional parameters
     Ui::MainWindow *ui;
-    QLabel *imageLabel;
     QPixmap m_pixmap;
     int blockSize;
 };

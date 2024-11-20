@@ -6,6 +6,9 @@
 #include <QThreadPool>
 #include <QLabel>
 #include <QScreen>
+#include <QDir>
+
+#include <iostream>
 
 //Initializing UI constructor
 MainWindow::MainWindow(QWidget *parent)
@@ -128,6 +131,15 @@ void MainWindow::onAverageColorComputed(int xStart, int yStart, QColor avgColor)
     // Update UI
     imageLabel->setPixmap(m_pixmap);
     imageLabel->update();
+}
+
+void MainWindow::saveImage() {
+
+    QString currentDir = QDir::currentPath();
+    std::cout << "Current Directory: " << currentDir.toStdString() << std::endl;
+
+    QString fullPath = currentDir + "/" + "result.jpg";
+    m_pixmap.save(fullPath);
 }
 
 // Destructor for MainWindow UI
